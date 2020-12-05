@@ -1,0 +1,140 @@
+register(studentID):void
+FileInputStream fileStream = new FileInputStream(students.txt);
+BufferedReader breader = new BuffereReader(new InputStreamReader(fileStream);
+String str;
+While (str = breader.readline()) != null)
+//Confirms they are a SEMO Student
+If (str == studentID) 
+{
+Output(“Student is already registered”);
+Break;
+}
+Else{
+If(VerifyRegistration(studentID)){
+	Output(“register successfully”);
+}
+Else{
+	Output(“register failed”);
+}
+
+}
+fileSteam.close();
+login(studentID):void
+if(verifyLogin (studentID)){
+Output(“login succeffully”);
+}
+Else{
+Output(“login failed”);
+}
+
+verifyLogin (studentID): boolean
+FileInputStream fileStream = new FileInputStream(students.txt);
+BufferedReader breader = new BuffereReader(new InputStreamReader(fileStream);
+String str;
+While (str = breader.readline()) != null){
+	If(str==studentID){
+	Output(“verify successful”)
+	Return true;
+}
+Else{
+	Output(“verify failed”)
+	Return false;
+}
+}
+fileStream.close();
+
+VerifyRegister(studentInfo):boolean
+	If(studentInfo.ID !=null &&studentInfo.Name!=null){
+	Output(“verify successfully”)
+Return true;
+}
+Else{
+	Output(“verify failed, please check your enter”)
+}
+
+RegisterAsDriver(studentInfo):void
+FileInputStream fileStream = new FileInputStream(driver.txt);
+BufferedReader breader = new BuffereReader(new InputStreamReader(fileStream);
+	If(VerifyAsDriver(studentInfo.ID)){
+	Breader.append(studentInfo);
+	output(“Register successful”);
+}
+Else{
+	Output(“you can not register as a driver”)
+}
+fileStream.close()
+VerifyAsDriver(studentID):Boolean
+	If(studentID!=null){
+	Output(“verify successfully”)
+	Return true;
+}
+Else{
+Output(“please check your ID”)
+Return false;
+}
+RegisterAsRider(studentInfo):void
+FileInputStream fileStream = new FileInputStream(rider.txt);
+BufferedReader breader = new BuffereReader(new InputStreamReader(fileStream);
+	If(VerifyAsDriver(studentInfo.ID)){
+	Breader.append(studentInfo);
+	output(“Register successful”);
+}
+Else{
+	Output(“you can not register as a driver”)
+}
+fileStream.close()
+
+VerifyAsRider(studentID):void
+If(studentID!=null){
+	Output(“verify successfully”)
+	Return true;
+}
+Else{
+Output(“please check your ID”)
+Return false;
+}
+
+RequestDriver(long, lat, startTime):void
+	If(ProcessRequest()){
+	FileInputStream fileStream = new FileInputStream(history.txt);
+BufferedReader breader = new BuffereReader(new InputStreamReader(fileStream);
+Breader.append(long)
+Breader.append(lat)
+Breader.append(startTime)
+startDriving();
+}
+Else{
+	cancleRequest (long, lat,startTime)
+}
+fileStream.close();
+	
+CalculatePrice(distance, unitPrice):Double
+	 Return Price = distance*unitPrice
+
+ProcessRequest(startlong, startlat, endlong, endlat):boolean
+	Distance = root(sqr(endlong)+sqr(endlat)-sqr(startlong)+sqr(startlat))
+	Price = calculatePrice(distance, unitPrice);
+	If(price>=expired){
+	Return true;
+}
+Else{
+	Return False;
+}
+cancleRequest(long, lat, startTime):void
+	output(“your request has been canceled”)
+finishDriving(requestInfo):void
+FileInputStream fileStream = new FileInputStream(history.txt);
+BufferedReader breader = new BuffereReader(new InputStreamReader(fileStream);
+Breader.append(requestInfo.endlong);
+Breader.append(requestInfo.endlat);
+Breader.append(Date().Time())
+Breader.append(requestInfo.price);
+Output(“finish driving”);
+startDriving(requestInfo):void
+FileInputStream fileStream = new FileInputStream(history.txt);
+BufferedReader breader = new BuffereReader(new InputStreamReader(fileStream);
+Breader.append(requestInfo .drivername);
+Breader.append(requestInfo .startlong);
+Breader.append(requestInfo .startlat);
+Breader.append(Date().Time())
+Output(“the driver is driving”);
